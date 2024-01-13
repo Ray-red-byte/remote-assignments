@@ -13,4 +13,7 @@ def binary_search_position(numbers, target):
     return -1  # Target not in numbers
 
 print(binary_search_position([0, 5, 6, 10, 14, 48], 8))
+print(binary_search_position([1, 4, 5, 50, 60, 100], 4))
+print(binary_search_position([0, 9, 18, 19, 29, 48], 18))
+print(binary_search_position([0, 5, 36, 50, 75, 80], 80))
             
