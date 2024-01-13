@@ -11,7 +11,7 @@ def find_max(numbers):
 def find_position(numbers,target):
     position = -1
     count = 0
-    
+
     for i in numbers:
         if i == target:
             position = count
@@ -23,8 +23,8 @@ def find_position(numbers,target):
 
 
 print(find_max([1, 2, 3, 4, 5, 8, 0, 4]))
-print(find_max([1, 2, 3, 4, 5, 8, 0, 4]))
-print(find_max([1, 2, 3, 4, 5, 8, 0, 4]))
-print(find_position([1, 2, 3, 4, 5, 8, 0, 4], 0))
-print(find_position([1, 2, 3, 4, 5, 8, 0, 4], 0))
-print(find_position([1, 2, 3, 4, 5, 8, 0, 4], 0))
+print(find_max([1, 5, 3, 4, 20, 0, 0, 8]))
+print(find_max([1, 5, 3, 400, 80, 80, 0, 4]))
+print(find_position([100, 20, 36, 48, 25, 80, 10, 14], 0))
+print(find_position([100, 20, 36, 48, 25, 80, 10, 14], 20))
+print(find_position([100, 20, 36, 48, 25, 80, 10, 14], 25))
