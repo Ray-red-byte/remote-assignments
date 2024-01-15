@@ -4,7 +4,7 @@
 def find_max(numbers):
     """Find MAX element in nubers list."""
     if len(numbers) == 0:
-        return -1
+        return "Empty list"
     max_num = numbers[0]
 
     for i in numbers:
