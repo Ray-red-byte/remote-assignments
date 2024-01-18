@@ -1,5 +1,5 @@
 const btn = document.querySelector(".btn");
-console.log(btn);
+const welcomeBlock = document.querySelector(".welcome-message");
 
 
 btn.addEventListener("click", () => {
@@ -12,3 +12,7 @@ btn.addEventListener("click", () => {
     lowerContent.style.marginRight = "auto";
     lowerContent.style.marginTop = "15px";
 });
+
+welcomeBlock.addEventListener("click", () => {
+    welcomeBlock.innerHTML = "Have a good Time!";
+})

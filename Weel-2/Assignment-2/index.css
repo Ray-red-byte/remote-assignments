@@ -36,12 +36,10 @@ section {
     flex-flow: wrap;
     flex-direction: column;
     align-items: center;
-    background-color: aqua;
 }
 
 .section-title {
     text-align: center;
-    background-color: blueviolet;
 }
 
 .all-containers-1 {
@@ -49,7 +47,6 @@ section {
     flex-flow: wrap;
     justify-content: center; 
     gap: 10px;
-    background-color: red;
 }
 
 .all-containers-2 {

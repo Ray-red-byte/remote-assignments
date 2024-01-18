@@ -6,7 +6,7 @@ def avg(data):
     for item in all_products:
         total += item["price"]
 
-    return total
+    return round(total/len(all_products), 3)
 
 
 print(avg({

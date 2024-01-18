@@ -10,7 +10,7 @@ def binary_search_first(numbers, target):
         middle_position = (left_position + right_position)//2
         if target == numbers[middle_position]:  # Hit the target
             count = middle_position
-            while True:
+            while True:                         # Trace back to first
                 count -= 1
                 if target != numbers[count]:
                     return count + 1
@@ -28,3 +28,4 @@ print(binary_search_first([1, 2, 5, 5, 5, 6, 7], 2))
 print(binary_search_first([1, 2, 5, 5, 5, 6, 7], 5))
 print(binary_search_first([1, 2, 5, 5, 5, 6, 7], 7))
 print(binary_search_first([1, 2, 2, 5, 5, 6, 6, 6, 10], 6))
+print(binary_search_first([1, 2, 2, 5, 5, 6, 6, 6, 10], 7))
