@@ -3,7 +3,7 @@ function max(numbers) {
         return 'Empty List'
     }
 
-    var max = numbers[0]
+    let max = numbers[0]
     for (number of numbers){
         if (number > max){
             max = number
