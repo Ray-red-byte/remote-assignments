@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Show Name</title>
+    </head>
+    <body>
+        {% if username not in names["name"] %}
+            <form action="{{ url_for('set_name_cookies') }}" method="GET">
+                <label>Name</label>
+                <input type="text" name="name" autofocus>
+                <input type="submit" value="Submit">
+            </form>
+        {% else %}
+            {% for name in names["name"] %}
+                {% if name == username %}
+                    <p>{{ name }}</p>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    </body>
+</html>

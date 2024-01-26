@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Week-3</title>
+    </head>
+    <body>
+        <input type="text" id="inputData">
+        <button id="result-btn" onclick="getResult();">Calculate</button>
+        <div id="result-total"></div>
+        <script>
+            function getResult(){
+                const number = document.getElementById("inputData").value;
+                fetch(`http://192.168.1.103:3000/data?number=${number}`)
+                .then(function(response){
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.text();
+                }).then(function(data){
+                    const resultTotal = document.getElementById("result-total")
+                    resultTotal.innerHTML = data
+                });
+            }
+        </script>
+    </body>
+</html>
