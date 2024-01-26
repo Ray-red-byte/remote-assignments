@@ -35,11 +35,10 @@ def sum_page():
     return render_template("sum.html")
 
 
-@app.route("/<myName>")
-def check_name(myName):
+@app.route("/myName")
+def check_name():
     names = get_cookies()
-    username = myName
-    return render_template("myName.html", names=names, username=username)
+    return render_template("myName.html", names=names)
 
 
 @app.route("/trackName", methods=['GET'])
@@ -50,8 +49,7 @@ def set_name_cookies():
 
     # Add into cookies
     names['name'].append(name_get)
-    print(names)
-    response = make_response(redirect(url_for('check_name', myName=name_get)))
+    response = make_response(redirect(url_for('check_name')))
     response.set_cookie('name', json.dumps(names))
     return response
 
