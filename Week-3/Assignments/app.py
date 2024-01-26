@@ -63,11 +63,11 @@ def lack_parameter():
     if number_value is None:
         return "<p>Lack of Parameter</p>"
 
-    if not isinstance(int(number_value), int):
-        return "<p> Wrong Parameter</p>"
-    else:
+    try:
         total = sum(int(number_value))
         return f"<p>{ total }</p>"
+    except ValueError:
+        return "<p> Wrong Parameter</p>"
 
 
 if __name__ == '__main__':
