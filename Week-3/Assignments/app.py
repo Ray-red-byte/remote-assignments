@@ -20,8 +20,9 @@ def sum(num):
 def get_cookies():
     try:
         data = json.loads(request.cookies.get('name'))
+        print(data)
     except TypeError:
-        data = {'name': []}
+        data = ""
     return data
 
 
@@ -37,20 +38,18 @@ def sum_page():
 
 @app.route("/myName")
 def check_name():
-    names = get_cookies()
-    return render_template("myName.html", names=names)
+    name = get_cookies()
+    return render_template("myName.html", name=name)
 
 
 @app.route("/trackName", methods=['GET'])
 def set_name_cookies():
     parameters = request.args
     name_get = parameters.get('name')
-    names = get_cookies()
 
     # Add into cookies
-    names['name'].append(name_get)
     response = make_response(redirect(url_for('check_name')))
-    response.set_cookie('name', json.dumps(names))
+    response.set_cookie('name', json.dumps(name_get))
     return response
 
 

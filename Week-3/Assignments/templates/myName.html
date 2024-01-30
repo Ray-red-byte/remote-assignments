@@ -4,16 +4,14 @@
         <title>Show Name</title>
     </head>
     <body>
-        {% if (names["name"])|length == 0 %}
+        {% if name|length == 0 %}
             <form action="{{ url_for('set_name_cookies') }}" method="GET">
                 <label>Name</label>
                 <input type="text" name="name" autofocus>
                 <input type="submit" value="Submit">
             </form>
         {% else %}
-            {% for name in names["name"] %}
-                <p>{{ name }}</p>
-            {% endfor %}
+            <p>{{ name }}</p>
         {% endif %}
     </body>
 </html>
