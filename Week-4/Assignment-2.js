@@ -1,5 +1,4 @@
 function ajax(src, callback){
-    // your code here
     fetch(src)
     .then(function(response){
         if (!response.ok) {
@@ -15,7 +14,6 @@ function ajax(src, callback){
 
 
 function render(data){
-    // document.createElement() and appendChild() methods are preferred.
     let products = document.createElement('div')
     for (let item in data) {
         console.log(data[item])
@@ -44,4 +42,4 @@ function render(data){
 ajax("https://remote-assignment.s3.ap-northeast-1.amazonaws.com/products",
     function(response){ 
         render(response);
-    }); // you should get product information in JSON format and render data in the page
+    }); 
