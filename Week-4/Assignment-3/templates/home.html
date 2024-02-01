@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home</title>
+    </head>
+    <body>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class="flashes">
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {% endwith %}
+        <!-- Send data to add new row -->
+        <form action="{{ url_for('sign_up') }}" method="GET">
+            <label>Sign Up</label>
+            <input type="text" name="email" placeholder="email">
+            <input type="text" name="password" placeholder="password">
+            <input type="submit" value="Submit">
+        </form>
+
+        <!-- Send data to check existing row -->
+        <form action="{{ url_for('sign_in') }}" method="GET">
+            <label>Sign In</label>
+            <input type="text" name="email" placeholder="email">
+            <input type="text" name="password" placeholder="password">
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>
