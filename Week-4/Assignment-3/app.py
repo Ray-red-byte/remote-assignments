@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template
-from flask import make_response, redirect, url_for, flash
+from flask import redirect, url_for, flash
 import pymysql.cursors
 
 app = Flask(__name__)
