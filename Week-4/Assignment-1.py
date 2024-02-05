@@ -14,10 +14,8 @@ def main():
 
     for i in range(5):
         t = threading.Thread(target=do_job, args=(i,))
-        threads.append(t)
-
-    for t in threads:
         t.start()
+        threads.append(t)
 
 
 main()
