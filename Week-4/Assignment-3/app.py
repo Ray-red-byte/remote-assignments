@@ -1,5 +1,6 @@
 from flask import Flask, request, render_template
 from flask import redirect, url_for, flash
+from validate_email_address import validate_email
 import pymysql.cursors
 
 app = Flask(__name__)
@@ -32,6 +33,14 @@ def sign_in():
     email_get = parameters.get('email')
     password_get = parameters.get('password')
 
+    try:
+        isValid = validate_email(email_get)
+    except Exception:
+        isValid = False
+
+    if not isValid:
+        flash('Invalid email format', 'success')
+        return redirect(url_for("home"))
 
     with create_connection() as connection:
         with connection.cursor() as cursor:
@@ -58,7 +67,15 @@ def sign_up():
     parameters = request.args
     email_get = parameters.get('email')
     password_get = parameters.get('password')
+    
+    try:
+        isValid = validate_email(email_get)
+    except Exception:
+        isValid = False
 
+    if not isValid:
+        flash('Invalid email format', 'success')
+        return redirect(url_for("home"))
 
     with create_connection() as connection:
         with connection.cursor() as cursor:
